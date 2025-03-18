@@ -1,0 +1,35 @@
+<header class="dps-o-header">
+  <div>
+    <div class="dps-o-header__body dps-row">
+      <nav class="dps-o-header__nav">
+        <a
+          href="javascript:void(0);"
+          class="dps-a-button dps-a-button--icon-right"
+          [routerLink]="['/manager']"
+        >
+          Manager
+        </a>
+        <a
+          href="javascript:void(0);"
+          class="dps-a-button"
+          [routerLink]="['/employee']"
+          >Employee</a
+        >
+      </nav>
+      <div class="dps-o-header__actions">
+        <dps-button size="md" type="tertiary">
+          <i class="far fa-search"></i>
+        </dps-button>
+        <dps-button size="md" type="tertiary">
+          <i class="far fa-cog"></i>
+        </dps-button>
+        <dps-button size="md" type="tertiary">
+          <i class="far fa-bell"></i>
+        </dps-button>
+        <div class="dps-a-avatar dps-a-avatar--md">
+          <img src="https://placedog.net/40/40?r" alt="" />
+        </div>
+      </div>
+    </div>
+  </div>
+</header>

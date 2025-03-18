@@ -1,0 +1,13 @@
+<div class="manager-page">
+  <div class="manager-container">
+    <div class="manager-wrapper">
+      <h1 class="dps-ty-display--lg">Manager Dashboard</h1>
+      <dps-button [routerLink]="['/achievements/create']">Create Achievement</dps-button>
+      <app-achievements-list 
+        [role]="'manager'" 
+        [achievements$]="achievements$"
+        [loading$]="loading$">
+      </app-achievements-list>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,58 @@
+<div class="create-achievement-container dps-u-bg-secondary">
+  <h2 class="dps-a-input">Create New Achievement</h2>
+  <form [formGroup]="myGroup">
+    <dps-input 
+      label="Title"
+      ngDefaultControl
+      formControlName="title"
+      name="title" 
+      placeholder="Title"
+      required>
+    </dps-input>
+      
+    <dps-textarea 
+      label="Description"
+      ngDefaultControl
+      formControlName="description"
+      name="description" 
+      placeholder="Description"
+      required>
+    </dps-textarea>
+
+    <dps-radio 
+      #status1
+      label="Status"
+      ngDefaultControl
+      formControlName="status"
+      name="status" 
+      [radios]="statuses"
+      required>
+    </dps-radio>
+  
+    <dps-input 
+      label="Assigned To"
+      ngDefaultControl
+      formControlName="assignedTo"
+      name="assignedTo"
+      placeholder="Employee name"
+      required>
+    </dps-input>
+
+    <dps-datepicker 
+      label="Reminder"
+      ngDefaultControl
+      formControlName="reminder"
+      name="reminder"
+      placeholder="reminder" 
+      unavailableto="2024-12-29" 
+      unavailablefrom="2027-01-01">
+    </dps-datepicker>
+
+    <dps-button 
+      type="submit"
+      [disabled]="isLoading"
+      (click)="createAchievement()">
+      {{ isLoading ? 'Creating...' : 'Create Achievement' }}
+    </dps-button>
+  </form>
+</div>

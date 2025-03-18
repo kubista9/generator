@@ -1,0 +1,58 @@
+<div *ngIf="achievement$ | async as achievement" class="achievement-details dps-col-xs-2 dps-u-bg-secondary">
+  <ng-container *ngIf="!isEditMode">
+    <h2 class="dps-a-input">{{ achievement.title }}</h2>
+    <div>
+      <p><strong>ID: </strong> {{ achievement.id }}</p>
+      <p><strong>Description:</strong> {{ achievement.description }}</p>
+      <p><strong>Reminder: </strong> {{ achievement.reminder | date }}</p>
+      <p><strong>Status:</strong> {{ achievement.status }}</p>
+      <p><strong>Assigned To:</strong> {{ achievement.assignedTo }}</p>
+      <p><strong>Created By:</strong> {{ achievement.createdBy }}</p>
+      <dps-button (click)="enableEditMode(achievement)">Edit</dps-button>
+    </div>
+  </ng-container>
+  
+  <ng-container *ngIf="isEditMode && editedAchievement">
+    <h2 class="dps-a-input">Edit Achievement</h2>
+    <form (ngSubmit)="saveChanges()">
+      
+      <dps-input 
+        [(ngModel)]="editedAchievement.title" 
+        name="title"
+        label="Title" 
+        placeholder="Title">
+      </dps-input>
+
+      <dps-textarea 
+        [(ngModel)]="editedAchievement.description"
+        label="Description" 
+        placeholder="Description"
+        name="description">
+      </dps-textarea>
+
+      <dps-datepicker 
+        [ngModel]="editedAchievement.reminder | date:'yyyy-MM-dd'" 
+        name="datepicker" 
+        label="Datepicker"
+        placeholder="Datepicker">
+      </dps-datepicker>
+  
+      <dps-input 
+        [(ngModel)]="editedAchievement.status" 
+        name="Status"
+        label="Status" 
+        placeholder="pending, approved or completed">
+      </dps-input>
+  
+      <dps-input 
+        [(ngModel)]="editedAchievement.assignedTo" 
+        name="assignedTo"
+        label="Assigned To" 
+        placeholder="assignedTo">
+      </dps-input>
+
+      <dps-button type="submit" (click)="saveChanges()">Save</dps-button>
+      <dps-button type="button" (click)="cancelEdit()">Cancel</dps-button>
+    </form>
+  </ng-container>
+</div>

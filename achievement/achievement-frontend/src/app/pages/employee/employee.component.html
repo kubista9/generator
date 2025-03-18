@@ -1,0 +1,13 @@
+<div class="employee-page">
+  <div class="employee-container">
+    <div class="employee-wrapper">
+      <h1 class="dps-ty-display--lg">Employees Dashboard</h1>
+      <dps-button [routerLink]="['/achievements/create']">Create Achievement</dps-button>
+      <app-achievements-list 
+        [role]="'employee'"
+        [achievements$]="achievements$"
+        [loading$]="loading$">
+      </app-achievements-list>
+    </div>
+  </div>
+</div>

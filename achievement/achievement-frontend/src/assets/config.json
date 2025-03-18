@@ -1,0 +1,29 @@
+{
+  "msalConfig": {
+    "clientId": "930fdd9c-ac00-40df-9e65-af553a0ca8bf",
+    "authority": "https://login.microsoftonline.com/45fc3211-6bfb-4ca8-8c0e-2d3a916a900f",
+    "redirectUri": "http://localhost:4200",
+    "cacheStrategy": "sessionStorage",
+    "cookieStrategy": "OnlyIE",
+    "logLevel": 0,
+    "authenticationScopes": [
+      "user.read",
+      "user.readbasic.all"
+    ],
+    "protectedResources": [
+      {
+        "https://localhost:44370/api": [
+          "api://90dc527b-7d64-412b-8a66-093ea717a97a/user_impersonation"
+        ],
+        "https://graph.microsoft.com/v1.0/me": [
+          "user.read"
+        ]
+      }
+    ]
+  },
+  "cacheLocation": "localStorage",
+  "apiUrl": "https://localhost:44370/api",
+  "apiGraphUrl": "https://graph.microsoft.com/v1.0",
+  "mock": false,
+  "instrumentationKey": "$CLIENTAIINSTRUMENTATIONKEY"
+}

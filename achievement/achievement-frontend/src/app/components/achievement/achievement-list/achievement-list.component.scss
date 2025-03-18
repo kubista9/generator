@@ -1,0 +1,11 @@
+.achievement-list-container {
+    padding: 15px 35px;
+    margin: 20px;
+    border-radius: 15px;
+}
+ 
+.achievement-list-wrapper {
+    margin-top: 30px;
+    display: inline-grid;
+    grid-template-columns: auto auto auto;
+}

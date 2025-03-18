@@ -1,0 +1,38 @@
+<div class="achievement-list-wrapper">
+  <ng-container *ngIf="!(loading$ | async); else loading">
+    <ng-container *ngIf="achievements$ | async as achievements">
+      <ng-container *ngIf="achievements.length > 0; else noAchievements">
+        <div *ngFor="let achievement of achievements" class="achievement-list-container dps-u-bg-secondary">
+          <h3>{{ achievement.title }}</h3>
+          <p>{{ achievement.description }}</p>
+          <p><strong>Assigned to: </strong> {{ achievement.assignedTo }}</p>
+          <p><strong>Reminder: </strong> {{ achievement.reminder | date:'yyyy-MM-dd'}}</p>  
+          <p><strong>Status: </strong> {{ achievement.status }}</p>
+          <div class="achievement-actions">
+            <dps-button *ngIf="role === 'manager'" (click)="viewAchievementDetails(achievement.id)">
+              Details
+            </dps-button>
+            <dps-button *ngIf="role === 'manager'" (click)="approveAchievement(achievement)">
+              Approve
+            </dps-button>
+            <dps-button *ngIf="role === 'manager'" (click)="rejectAchievement(achievement)">
+              X
+            </dps-button>
+          </div>
+        </div>
+      </ng-container>
+    </ng-container>
+  </ng-container>
+
+  <ng-template #loading>
+    <div class="loading-message">
+      Loading achievements...
+    </div>
+  </ng-template>
+
+  <ng-template #noAchievements>
+    <div class="no-achievements-message">
+      No achievements found.
+    </div>
+  </ng-template>
+</div>

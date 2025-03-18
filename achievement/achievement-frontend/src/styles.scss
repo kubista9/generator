@@ -1,0 +1,10 @@
+/* You can add global styles to this file, and also import other style files */
+router-outlet
+{
+  display: none;
+}
+
+input, textarea, select {
+  width: 100%;
+  padding: 8px;
+}
