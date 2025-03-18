@@ -1,0 +1,57 @@
+<div class="dps-o-menu">
+  <div class="dps-o-menu__top">
+    <img
+      class="dps-o-menu__logo"
+      src="/assets/images/ucb-logo.png"
+      alt="UCB Logo"
+    />
+    <div class="dps-a-input dps-a-input--icon-left">
+      <div class="dps-a-input__wrapper">
+        <span class="dps-a-input__icon"><i class="far fa-search"></i></span>
+        <input placeholder="Search" />
+      </div>
+    </div>
+    <nav class="dps-o-menu__nav">
+      <ul>
+        <li class="dps-o-menu__item dps-o-menu__item--closed">
+          <i class="far fa-house"></i>
+          Home
+        </li>
+        <li class="dps-o-menu__item dps-o-menu__item--closed">
+          <i class="far fa-chart-line"></i>
+          Another page
+        </li>
+      </ul>
+    </nav>
+  </div>
+  <div class="dps-o-menu__bottom">
+    <nav class="dps-o-menu__nav">
+      <ul>
+        <li class="dps-o-menu__item">
+          <a href="javascript:void(0);"
+            ><i class="far fa-cog"></i>
+            Settings
+          </a>
+        </li>
+        <li class="dps-o-menu__item">
+          <a href="javascript:void(0);"
+            ><i class="far fa-user"></i>
+            Profile
+          </a>
+        </li>
+      </ul>
+    </nav>
+    <span class="dps-o-menu__separator"></span>
+    <div class="dps-o-menu__profile" *ngIf="this._profile$ | async as profile">
+      <dps-avatar
+        size="sm"
+        [image]="profile.photo"
+        [attr.text]="profile.name"
+      ></dps-avatar>
+      <p class="dps-o-menu__info">
+        <span class="dps-o-menu__name">{{ profile.name }}</span>
+        <span class="dps-o-menu__email">{{ profile.email }}</span>
+      </p>
+    </div>
+  </div>
+</div>

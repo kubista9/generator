@@ -1,0 +1,25 @@
+{
+  "msalConfig": {
+    "clientId": "$CLIENTCLIENTID",
+    "authority": "https://login.microsoftonline.com/$AZURETENANT",
+    "redirectUri": "http://localhost:4200",
+    "cacheStrategy": "sessionStorage",
+    "cookieStrategy": "OnlyIE",
+    "logLevel": 0,
+    "authenticationScopes": ["user.read", "user.readbasic.all"],
+    "protectedResources": [
+      {
+        "$APIURL/*": ["$APIRESOURCEID/user_impersonation"],
+        "https://graph.microsoft.com/v1.0/me": ["user.read"]
+      }
+    ],
+    "endpoints": {
+      "orchestratorsConnect": "api://8a97d7d0-eec6-4f9c-813c-50fe24aaef04/Orchestrators.Connect"
+    }
+  },
+  "cacheLocation": "localStorage",
+  "apiUrl": "$APIURL",
+  "apiGraphUrl": "https://graph.microsoft.com/v1.0",
+  "mock": false,
+  "instrumentationKey": "$CLIENTAIINSTRUMENTATIONKEY"
+}

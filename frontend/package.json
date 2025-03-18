@@ -1,0 +1,46 @@
+{
+  "name": "@angular/create-generator",
+  "version": "2.0.64",
+  "readme": "./README.md",
+  "author": "Jakub Kuka",
+  "type": "module",
+  "main": "dist/create.mjs",
+  "publishConfig": {
+    "registry": "http://localhost:4873"
+  },
+  "bin": {
+    "create-check": "./dist/create.cmd"
+  },
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview",
+    "start": "node dist/create.mjs",
+    "create": "node dist/create.mjs",
+    "test": "vitest",
+    "test:watch": "vitest --watch",
+    "coverage": "vitest run --coverage"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.16.0",
+    "@types/node": "^22.5.2",
+    "@vitest/coverage-v8": "^2.1.3",
+    "@vitest/ui": "^2.1.3",
+    "eslint": "^9.16.0",
+    "globals": "^15.13.0",
+    "jsdom": "^25.0.1",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.5.4",
+    "typescript-eslint": "^8.18.0",
+    "vite": "^5.4.3",
+    "vite-tsconfig-paths": "^5.0.1",
+    "vitest": "^2.1.3"
+  },
+  "dependencies": {
+    "@inquirer/prompts": "^5.4.0",
+    "execa": "^9.3.1",
+    "inquirer": "^10.2.0",
+    "verdaccio": "^6.0.1",
+    "vite-tsconfig-paths": "^5.0.1"
+  }
+}
