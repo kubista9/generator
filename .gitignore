@@ -1,0 +1,57 @@
+*.vs
+*.idea/
+.vscode
+.angular
+*.code-workspace
+
+# ASP.NET Core
+project.lock.json
+project.fragment.lock.json
+artifacts/
+
+# NuGet
+*.nupkg
+*.snupkg
+*.nuspec
+project-lock.json
+project.fragment.lock.json
+package.lock.json
+artifacts/
+*.nupkg
+*.snupkg
+
+# Built files
+bin/
+obj/
+out/
+*.dll
+*.exe
+*.app
+*.appx
+*.out
+*.ipa
+*.vs
+
+# Compiled output
+**/bin
+**/obj
+**.vs
+**/appsettings.Development.json
+.template.config
+Properties
+
+*.http
+appsettings.json
+
+# See http://help.github.com/ignore-files/ for more about ignoring files.
+
+# Compiled output
+dist
+
+# Node
+node_modules
+
+# IDEs and editors
+.project
+
+.npmrc
